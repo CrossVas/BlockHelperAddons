@@ -51,7 +51,7 @@ dependencies {
 	}
 
 	// main
-	modImplementation files("libs/VintageCore-1.4.7-2.0.0-dev.jar")
+	modImplementation files("libs/VintageCore-1.4.7-2.0.2.jar")
 
 	// ic2
 	modImplementation files("libs/industrialcraft-2_1.115.207-lf.jar")
@@ -61,7 +61,7 @@ dependencies {
 	modImplementation files("libs/AdvancedMachines-1.4.7-4.7.5.2d-dev.jar")
 	modImplementation files("libs/compactsolars.zip")
 	modImplementation files("libs/apm.jar")
-	modImplementation files("libs/BlockHelper-1.4.7-2.0.0-pre4.jar")
+	modImplementation files("libs/BlockHelper-1.4.7-2.0.0-pre12-dev.jar")
 
 	modImplementation('maven.modrinth:nei:vqhwlzMQ')
 	modImplementation('maven.modrinth:codechicken-core:tHDtt4Mh')

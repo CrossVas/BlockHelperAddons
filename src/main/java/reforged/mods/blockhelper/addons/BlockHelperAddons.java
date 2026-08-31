@@ -5,6 +5,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import ic2.core.IC2;
 import mods.vintage.core.helpers.ConfigHelper;
+import mods.vintage.core.platform.lang.LocalizationProvider;
 import mods.vintage.core.platform.lang.Translator;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,12 +22,14 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Locale;
 
+@LocalizationProvider
 @Mod(modid = BlockHelperAddons.ID, useMetadata = true)
 public class BlockHelperAddons {
 
     public static final String ID = "BlockHelperAddons";
 
     public Configuration CONFIG;
+    @LocalizationProvider.List(modId = ID)
     public static String[] LANGS;
     public static int BAR_WIDTH;
 
