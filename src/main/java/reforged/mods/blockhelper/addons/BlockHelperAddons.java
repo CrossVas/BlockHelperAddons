@@ -34,17 +34,16 @@ public class BlockHelperAddons {
     public static int BAR_WIDTH;
 
     public BlockHelperAddons() {
-        CONFIG = ConfigHelper.getConfigFor(ID);
-        CONFIG.load();
-        LANGS = ConfigHelper.getLocalizations(CONFIG, new String[] {"en_US", "ru_RU"}, ID);
-        BAR_WIDTH = ConfigHelper.getInt(CONFIG, "general", "barWidth", 135, Integer.MAX_VALUE, 135, "Increase this if you don't like scrolling text.");
-        CONFIG.save();
-
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     @Mod.PreInit
     public void pre(FMLPreInitializationEvent e) {
+        CONFIG = ConfigHelper.getConfigFor(ID);
+        CONFIG.load();
+        LANGS = ConfigHelper.getLocalizations(CONFIG, new String[] {"en_US", "ru_RU"}, ID);
+        BAR_WIDTH = ConfigHelper.getInt(CONFIG, "general", "barWidth", 135, Integer.MAX_VALUE, 135, "Increase this if you don't like scrolling text.");
+        CONFIG.save();
         WailaCommonHandler.INSTANCE.init();
         GameRegistry.addRecipe(new ToolIntegrationRecipe());
         try {
