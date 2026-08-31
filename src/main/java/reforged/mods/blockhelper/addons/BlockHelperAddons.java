@@ -34,6 +34,11 @@ public class BlockHelperAddons {
     public static int BAR_WIDTH;
 
     public BlockHelperAddons() {
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    @Mod.PreInit
+    public void pre(FMLPreInitializationEvent e) {
         CONFIG = ConfigHelper.getConfigFor(ID);
         CONFIG.load();
         LANGS = ConfigHelper.getLocalizations(CONFIG, new String[] {"en_US", "ru_RU"}, ID);
@@ -41,11 +46,6 @@ public class BlockHelperAddons {
         if (CONFIG != null) {
             if (CONFIG.hasChanged()) CONFIG.save();
         }
-        MinecraftForge.EVENT_BUS.register(this);
-    }
-
-    @Mod.PreInit
-    public void pre(FMLPreInitializationEvent e) {
         WailaCommonHandler.INSTANCE.init();
         GameRegistry.addRecipe(new ToolIntegrationRecipe());
         try {
